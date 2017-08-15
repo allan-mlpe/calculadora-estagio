@@ -1,6 +1,17 @@
-<input type="range" min="8">
-
-
 <div>
-  Faltam {{ remainingHours }} para você concluir o estágio.
+  <p class="range-field">
+    <label>Horas de Estágio (total):</label>
+    <input (input)="updateRemainingHours()" [(ngModel)]="totalHours" type="range" min="8" max="450">
+  </p>
+  <p class="range-field">
+    <label>Horas estagiadas:</label>
+    <input (input)="updateRemainingHours()" [(ngModel)]="completedHours" type="range" min="0" [max]="totalHours">
+  </p>
+</div>
+
+<div class="info center">
+  <p>Você cumpriu {{ completedHours }} {{ completedHours > 1 ? "horas" : "hora" }} de um total de {{ totalHours }} horas.</p>
+  <p>Você precisa cumprir mais</p>
+  <h5> {{ remainingHours }} {{ remainingHours > 1 ? "horas" : "hora" }} </h5> 
+  <p>para concluir o estágio.</p>
 </div>
