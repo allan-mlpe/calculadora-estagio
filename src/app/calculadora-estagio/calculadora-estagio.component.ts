@@ -19,18 +19,14 @@ export class CalculadoraEstagioComponent implements OnInit {
     this.updateRemainingHours();
   }
 
-  changeTotalHours(value) {
-    //console.log(value);
-    this.totalHours = value;
-    this.updateRemainingHours();
-  }
-
-  changeCompletedHours(value) {
-    this.completedHours = value;
-    this.updateRemainingHours();
-  }
-
   updateRemainingHours() {
-    this.remainingHours = this.totalHours - this.completedHours;
+    var aux = this.totalHours - this.completedHours;
+
+    if(aux >= 0) {
+      this.remainingHours = this.totalHours - this.completedHours;
+    } else {
+      this.remainingHours = 0;
+      this.completedHours = this.totalHours;
+    }
   }
 }
