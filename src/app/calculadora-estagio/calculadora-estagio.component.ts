@@ -8,10 +8,10 @@ import { Component, OnInit } from '@angular/core';
 export class CalculadoraEstagioComponent implements OnInit {
 
 
-  private remainingHours: number;
-  private totalHours: number = 450;
-  private completedHours: number = 0;
-  private missedHours: number = 0;
+  remainingHours: number;
+  totalHours: number = 450;
+  completedHours: number = 0;
+  missedHours: number = 0;
 
   constructor() { }
 
